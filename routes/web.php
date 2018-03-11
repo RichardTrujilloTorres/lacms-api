@@ -18,6 +18,10 @@ $router->get('/', function () use ($router) {
 
 $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', function ($api) {
+
+    /**
+     * Posts
+     */
     $api->group([
         // 'middleware' => 'foo',
         'prefix' => 'posts',
@@ -30,7 +34,9 @@ $api->version('v1', function ($api) {
     });
 });
 
-$api->version('v1', function ($api) {
+    /**
+     * Authors
+     */
     $api->group([
         // 'middleware' => 'foo',
         'prefix' => 'authors',
