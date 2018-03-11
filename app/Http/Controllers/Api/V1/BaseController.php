@@ -71,6 +71,4 @@ class BaseController extends Controller
 
         return $this->response->array($resource->toArray());
     }
-        
-
 }
