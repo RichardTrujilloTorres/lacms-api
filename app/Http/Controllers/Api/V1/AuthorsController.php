@@ -30,8 +30,10 @@ class AuthorsController extends BaseController
     protected function validator(Request $request)
     {
         return Validator::make($request->all(), [
-            'author_id' => 'required|integer|exists:authors,id',
-            'title' => 'required|unique:posts|max:255',
+            'first_name' => 'required|alpha|max:255',
+            'last_name' => 'required|alpha|max:255',
+            'about' => 'required|max:255',
+            // 
         ]);
     }
 }
