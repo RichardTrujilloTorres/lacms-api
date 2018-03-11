@@ -27,6 +27,26 @@ $api->version('v1', function ($api) {
         $api->get('/', 'PostsController@index');
         $api->get('/{id}', 'PostsController@show');
         $api->post('/', 'PostsController@store');
-
     });
 });
+
+$api->version('v1', function ($api) {
+    $api->group([
+        // 'middleware' => 'foo',
+        'prefix' => 'authors',
+        'namespace' => 'App\Http\Controllers\Api\V1',
+    ], function ($api) {
+
+        $api->get('/', 'AuthorsController@index');
+        $api->get('/{id}', 'AuthorsController@show');
+        /*
+        $api->post('/', 'AuthorsController@store');
+         */
+
+        $api->get('/{id}/posts', 'AuthorsController@posts');
+    });
+});
+
+
+
+
