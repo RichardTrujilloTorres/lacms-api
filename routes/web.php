@@ -30,9 +30,9 @@ $api->version('v1', function ($api) {
 
         $api->get('/', 'PostsController@index');
         $api->get('/{id}', 'PostsController@show');
+        $api->put('/{id}', 'PostsController@update');
         $api->post('/', 'PostsController@store');
     });
-});
 
     /**
      * Authors
