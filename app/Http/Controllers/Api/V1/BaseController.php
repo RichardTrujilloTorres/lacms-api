@@ -71,4 +71,19 @@ class BaseController extends Controller
 
         return $this->response->array($resource->toArray());
     }
+
+    /**
+     * Update a resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function update($id) 
+    {
+        $resource = $this->model::findOrFail($id);
+        $resource->update($this->requests->toArray());
+
+        return $this->response->array($resource->toArray());
+    }
+
+
 }
