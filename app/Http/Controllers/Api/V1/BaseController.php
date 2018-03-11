@@ -59,12 +59,7 @@ class BaseController extends Controller
      */
     public function store() 
     {
-        $validator = Validator::make($this->requests->toArray(), [
-            'author_id' => 'required|integer|exists:authors',
-            'title' => 'required|unique:posts|max:255',
-            'title' => 'required',
-        ]);
-
+        $validator = $this->validator($this->requests);
         if ($validator->fails()) {
             throw new \Dingo\Api\Exception\StoreResourceFailedException(
                 'Could not create new resource.', 
