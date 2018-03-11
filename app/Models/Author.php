@@ -14,4 +14,9 @@ class Author extends Model
     protected $fillable = [
         'first_name', 'last_name', 'about',
     ];
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class, 'author_id');
+    }
 }
