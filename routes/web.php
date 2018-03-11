@@ -44,9 +44,10 @@ $api->version('v1', function ($api) {
     ], function ($api) {
 
         $api->get('/', 'AuthorsController@index');
-        $api->get('/{id}', 'AuthorsController@show');
-        /*
         $api->post('/', 'AuthorsController@store');
+        $api->get('/{id}', 'AuthorsController@show');
+        $api->put('/{id}', 'AuthorsController@update');
+        /*
          */
 
         $api->get('/{id}/posts', 'AuthorsController@posts');
