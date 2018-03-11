@@ -27,6 +27,12 @@ class AuthorsController extends BaseController
         return $author;
     }
 
+    /**
+     * Get store validator.
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Validation\Validator
+     */
     protected function validator(Request $request)
     {
         return Validator::make($request->all(), [

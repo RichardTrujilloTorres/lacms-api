@@ -24,11 +24,15 @@ class PostsController extends BaseController
     {
         $post = Post::with('author')->findOrFail($id);
 
-        return $post;
+        return $this->response->array($post->toArray());
     }
 
-
-
+    /**
+     * Get store validator.
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Validation\Validator
+     */
     protected function validator(Request $request)
     {
         return Validator::make($request->all(), [
