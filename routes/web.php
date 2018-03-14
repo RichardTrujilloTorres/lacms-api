@@ -32,6 +32,7 @@ $api->version('v1', function ($api) {
         $api->get('/{id}', 'PostsController@show');
         $api->put('/{id}', 'PostsController@update');
         $api->post('/', 'PostsController@store');
+        $api->delete('/{id}', 'PostsController@delete');
     });
 
     /**
