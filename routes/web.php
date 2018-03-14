@@ -29,9 +29,9 @@ $api->version('v1', function ($api) {
     ], function ($api) {
 
         $api->get('/', 'PostsController@index');
+        $api->post('/', 'PostsController@store');
         $api->get('/{id}', 'PostsController@show');
         $api->put('/{id}', 'PostsController@update');
-        $api->post('/', 'PostsController@store');
         $api->delete('/{id}', 'PostsController@delete');
     });
 
