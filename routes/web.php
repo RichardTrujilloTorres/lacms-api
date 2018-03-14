@@ -48,8 +48,7 @@ $api->version('v1', function ($api) {
         $api->post('/', 'AuthorsController@store');
         $api->get('/{id}', 'AuthorsController@show');
         $api->put('/{id}', 'AuthorsController@update');
-        /*
-         */
+        $api->delete('/{id}', 'AuthorsController@delete');
 
         $api->get('/{id}/posts', 'AuthorsController@posts');
     });
