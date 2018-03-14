@@ -85,5 +85,20 @@ class BaseController extends Controller
         return $this->response->array($resource->toArray());
     }
 
+    /**
+     * Delete a resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function delete($id) 
+    {
+        $resource = $this->model::findOrFail($id);
+        $resource->delete();
+
+        return $this->response->array([
+            'status' => 'success',
+            'message' => 'Resource deleted.',
+        ]);
+    }
 
 }
