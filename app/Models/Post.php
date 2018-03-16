@@ -4,9 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-use App\Models\Author;
-
-class Post extends Model 
+class Post extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -20,5 +18,10 @@ class Post extends Model
     public function author()
     {
         return $this->hasOne(Author::class, 'id', 'author_id');
+    }
+
+    public function images()
+    {
+        return $this->hasMany(Image::class, 'post_id');
     }
 }
