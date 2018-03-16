@@ -28,7 +28,6 @@ $api->version('v1', function ($api) {
         'prefix' => 'images',
         'namespace' => 'App\Http\Controllers\Api\V1',
     ], function ($api) {
-
         $api->get('/', 'ImagesController@index');
         $api->post('/', 'ImagesController@store');
         $api->get('/{id}', 'ImagesController@show');
@@ -65,7 +64,6 @@ $api->version('v1', function ($api) {
         'prefix' => 'authors',
         'namespace' => 'App\Http\Controllers\Api\V1',
     ], function ($api) {
-
         $api->get('/', 'AuthorsController@index');
         $api->post('/', 'AuthorsController@store');
         $api->get('/{id}', 'AuthorsController@show');
@@ -75,7 +73,3 @@ $api->version('v1', function ($api) {
         $api->get('/{id}/posts', 'AuthorsController@posts');
     });
 });
-
-
-
-
