@@ -20,7 +20,7 @@ class PostsController extends BaseController
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id) 
+    public function show($id)
     {
         $post = Post::with('author')->findOrFail($id);
 
@@ -28,8 +28,24 @@ class PostsController extends BaseController
     }
 
     /**
+     * Get post images.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function images($id)
+    {
+        $post = Post::with('images')->findOrFail($id);
+
+        return $this->response->array($post->images->toArray());
+    }
+
+
+
+
+    /**
      * Get store validator.
-     * 
+     *
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Validation\Validator
      */

@@ -16,7 +16,7 @@ class ImagesController extends BaseController
 
     /**
      * Get store validator.
-     * 
+     *
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Validation\Validator
      */
@@ -26,7 +26,7 @@ class ImagesController extends BaseController
             'first_name' => 'required|alpha|max:255',
             'last_name' => 'required|alpha|max:255',
             'about' => 'required|max:255',
-            // 
+            //
         ]);
     }
 }
