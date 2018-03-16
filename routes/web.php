@@ -19,6 +19,25 @@ $router->get('/', function () use ($router) {
 $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', function ($api) {
 
+
+    /**
+     * Images
+     */
+    $api->group([
+        // 'middleware' => 'foo',
+        'prefix' => 'images',
+        'namespace' => 'App\Http\Controllers\Api\V1',
+    ], function ($api) {
+
+        $api->get('/', 'ImagesController@index');
+        $api->post('/', 'ImagesController@store');
+        $api->get('/{id}', 'ImagesController@show');
+        $api->put('/{id}', 'ImagesController@update');
+        $api->delete('/{id}', 'ImagesController@delete');
+    });
+
+
+
     /**
      * Posts
      */
