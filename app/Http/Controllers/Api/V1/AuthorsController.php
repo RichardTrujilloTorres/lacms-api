@@ -20,7 +20,7 @@ class AuthorsController extends BaseController
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function posts($id) 
+    public function posts($id)
     {
         $author = Author::with('posts')->findOrFail($id);
 
@@ -29,7 +29,7 @@ class AuthorsController extends BaseController
 
     /**
      * Get store validator.
-     * 
+     *
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Validation\Validator
      */
@@ -39,7 +39,7 @@ class AuthorsController extends BaseController
             'first_name' => 'required|alpha|max:255',
             'last_name' => 'required|alpha|max:255',
             'about' => 'required|max:255',
-            // 
+            //
         ]);
     }
 }
