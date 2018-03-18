@@ -1,3 +1,21 @@
+build:
+    environment:
+        variables:
+                APP_DEBUG: true
+                APP_KEY: base64:gp5H9hu+vebVtsr7HEuLRCB10MN/4ApH+ARlmEq5urk=
+                APP_TIMEZONE: "UTC"
+                APP_WELCOME_MESSAGE: "LaCMS API"
+
+                CACHE_DRIVER: file
+                QUEUE_DRIVER: sync
+
+                API_STANDARDS_TREE: "vnd"
+                API_PREFIX: "api"
+                API_VERSION: "v1"
+                API_NAME: "LACMS API"
+                API_STRICT: false
+                API_DEBUG: true
+
 filter:
     excluded_paths: [tests/*]
 
