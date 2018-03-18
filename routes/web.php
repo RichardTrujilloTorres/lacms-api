@@ -6,14 +6,15 @@
 |--------------------------------------------------------------------------
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
-
-
 $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', function ($api) {
 
+    /**
+     * Welcome message.
+     */
+    $api->get('/', function () {
+        return 'LaCMS API';
+    });
 
     /**
      * Images
