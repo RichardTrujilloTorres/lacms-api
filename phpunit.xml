@@ -22,6 +22,10 @@
     <php>
         <env name="APP_ENV" value="testing"/>
         <env name="APP_WELCOME_MESSAGE" value="LaCMS API"/>
+        <env name="APP_PREFIX" value="api"/>
+        <env name="APP_VERSION" value="v1"/>
+        <env name="APP_NAME" value="LaCMS API"/>
+        <env name="APP_STANDARDS_TREE" value="vnd"/>
         <env name="CACHE_DRIVER" value="array"/>
         <env name="QUEUE_DRIVER" value="sync"/>
     </php>
