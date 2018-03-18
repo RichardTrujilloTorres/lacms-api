@@ -19,4 +19,9 @@ class Image extends Model
     {
         return $this->belongsTo(Post::class);
     }
+
+
+    // @todo
+    // slug generator
+    // url generator (could use the URL shortener API)
 }
