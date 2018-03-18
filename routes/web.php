@@ -17,10 +17,10 @@ $api->version('v1', function ($api) {
     });
 
     /**
-     * Images
+     * Images.
      */
     $api->group([
-        // 'middleware' => 'foo',
+        // 'middleware' => 'api:auth', // @todo
         'prefix' => 'images',
         'namespace' => 'App\Http\Controllers\Api\V1',
     ], function ($api) {
@@ -34,7 +34,7 @@ $api->version('v1', function ($api) {
 
 
     /**
-     * Posts
+     * Posts.
      */
     $api->group([
         // 'middleware' => 'foo',
