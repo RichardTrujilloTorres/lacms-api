@@ -15,7 +15,7 @@ class ExampleTest extends TestCase
         $this->get('/api');
 
         $this->assertEquals(
-            env('APP_WELCOME_MESSAGE'), $this->response->getContent()
+            "LaCMS API", $this->response->getContent()
         );
     }
 }
