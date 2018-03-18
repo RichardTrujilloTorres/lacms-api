@@ -40,9 +40,6 @@ class PostsController extends BaseController
         return $this->response->array($post->images->toArray());
     }
 
-
-
-
     /**
      * Get store validator.
      *
