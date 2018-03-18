@@ -45,7 +45,7 @@ class BaseController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id) 
+    public function show($id)
     {
         $resource = $this->model::findOrFail($id);
 
@@ -57,12 +57,12 @@ class BaseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store() 
+    public function store()
     {
         $validator = $this->validator($this->requests);
         if ($validator->fails()) {
             throw new \Dingo\Api\Exception\StoreResourceFailedException(
-                'Could not create new resource.', 
+                'Could not create new resource.',
                 $validator->errors()
             );
         }
@@ -77,7 +77,7 @@ class BaseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update($id) 
+    public function update($id)
     {
         $resource = $this->model::findOrFail($id);
         $resource->update($this->requests->toArray());
@@ -90,7 +90,7 @@ class BaseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function delete($id) 
+    public function delete($id)
     {
         $resource = $this->model::findOrFail($id);
         $resource->delete();
@@ -100,5 +100,4 @@ class BaseController extends Controller
             'message' => 'Resource deleted.',
         ]);
     }
-
 }
