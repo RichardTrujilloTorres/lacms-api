@@ -20,8 +20,7 @@ class CreateImagesTable extends Migration
             $table->string('slug')->nullable();
             $table->timestamps();
 
-            // @todo
-            // $table->foreign('post_id')->references('id')->On('posts')->onDelete('cascade');
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
         });
     }
 
