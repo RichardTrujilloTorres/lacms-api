@@ -11,7 +11,7 @@ pipeline {
                 sh '''
                     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
                 '''
-                sh 'apt-get update && apt-get install php-zip'
+                sh 'apt-get update && apt-get install php7.0-zip'
             }
         }
     }
