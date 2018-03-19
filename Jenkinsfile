@@ -8,6 +8,7 @@ pipeline {
                     echo "Multiline shell"
                     ls -lah
                 '''
+                sh './vendor/bin/phpunit'
             }
         }
     }
