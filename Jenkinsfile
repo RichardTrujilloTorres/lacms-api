@@ -8,8 +8,9 @@ pipeline {
                     echo "Multiline shell"
                     ls -lah
                 '''
-                sh 'curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-'
+                sh '''
+                    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+                '''
             }
         }
     }
