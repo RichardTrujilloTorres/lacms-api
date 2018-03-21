@@ -1,9 +1,13 @@
 pipeline {
     agent { docker { image 'php' } }
     stages {
-        stage('build') {
+        stage('pre-build') {
             steps {
                 sh 'php --version'
+            }
+        }
+        stage('build') {
+            steps {
                 sh '''
                     echo "Multiline shell"
                     ls -lah
