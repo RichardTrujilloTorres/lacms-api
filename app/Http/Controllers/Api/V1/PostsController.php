@@ -27,6 +27,31 @@ class PostsController extends BaseController
         return $this->response->array($post->toArray());
     }
 
+
+
+    /**
+     * Get post author.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function author($id)
+    {
+        $post = Post::findOrFail($id);
+        if (! $post->author) {
+            // @todo 
+            // use Dingo response instead
+            return response()->json([
+                'status' => 'error', 
+                'message' => 'Resource not found', 
+                'errors' => 'Could not find author for post with ID: '.$id,
+            ], 404);
+        }
+
+        return $this->response->array($post->author->toArray());
+    }
+
+
     /**
      * Get post images.
      *
