@@ -50,6 +50,7 @@ $api->version('v1', function ($api) {
 
         // images
         $api->get('/{id}/images', 'PostsController@images');
+        $api->get('/{id}/author', 'PostsController@author');
     });
 
     /**
