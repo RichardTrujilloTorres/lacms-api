@@ -23,9 +23,8 @@ class ImagesController extends BaseController
     protected function validator(Request $request)
     {
         return Validator::make($request->all(), [
-            'first_name' => 'required|alpha|max:255',
-            'last_name' => 'required|alpha|max:255',
-            'about' => 'required|max:255',
+            'file' => 'required|file',
+            'name' => 'required|max:255',
             //
         ]);
     }
