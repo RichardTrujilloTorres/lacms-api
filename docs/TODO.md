@@ -6,3 +6,6 @@
 
 
 - []    resources cloud setup
+- []    slug generator: package
+- []    image slug generation
+- []    Redis setup
