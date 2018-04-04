@@ -26,7 +26,7 @@ class PostsController extends BaseController
     {
         $posts = Redis::get('posts');
         if (! $posts) {
-            $posts = Post::with('author')->all();
+            $posts = Post::with('author')->get();
         }
 
         return $this->response->array([
