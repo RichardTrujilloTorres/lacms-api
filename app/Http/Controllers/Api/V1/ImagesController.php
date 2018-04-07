@@ -8,6 +8,8 @@ use App\Models\Post;
 use App\Models\Author;
 use App\Models\Image;
 
+use Dingo\Api\Routing\Helpers;
+
 use Validator;
 
 class ImagesController extends BaseController
