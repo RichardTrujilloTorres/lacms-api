@@ -26,7 +26,7 @@ class ImagesController extends BaseController
     {
         return Validator::make($request->all(), [
             'file' => 'required|file',
-            'name' => 'required|max:255',
+            'post_id' => 'required|exists:posts,id',
             //
         ]);
     }
