@@ -59,7 +59,14 @@ class BaseController extends Controller
     {
         $resource = $this->model::all();
 
-        return $this->response->array($resource->toArray());
+
+        return $this->response->array([
+            'status' => 'success',
+            'message' => '',
+            'data' => [
+                $this->getResourceName() => $resource,
+            ],
+        ]);
     }
 
     /**
@@ -72,7 +79,13 @@ class BaseController extends Controller
     {
         $resource = $this->model::findOrFail($id);
 
-        return $this->response->array($resource->toArray());
+        return $this->response->array([
+            'status' => 'success',
+            'message' => '',
+            'data' => [
+                $this->getResourceSingleName() => $resource,
+            ],
+        ]);
     }
 
     /**
@@ -92,7 +105,13 @@ class BaseController extends Controller
 
         $resource = $this->model::create($this->requests->toArray());
 
-        return $this->response->array($resource->toArray());
+        return $this->response->array([
+            'status' => 'success',
+            'message' => '',
+            'data' => [
+                $this->getResourceSingleName() => $resource,
+            ],
+        ]);
     }
 
     /**
@@ -105,7 +124,13 @@ class BaseController extends Controller
         $resource = $this->model::findOrFail($id);
         $resource->update($this->requests->toArray());
 
-        return $this->response->array($resource->toArray());
+        return $this->response->array([
+            'status' => 'success',
+            'message' => '',
+            'data' => [
+                $this->getResourceSingleName() => $resource,
+            ],
+        ]);
     }
 
     /**
