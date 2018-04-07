@@ -27,6 +27,29 @@ class BaseController extends Controller
         $this->requests = $request;
     }
 
+
+    /**
+     * Get resource name.
+     *
+     * @return string
+     */
+    public function getResourceName()
+    {
+        return $this->getResourceSingleName().'s';
+    }
+
+    /**
+     * Get resource single name.
+     *
+     * @return string
+     */
+    public function getResourceSingleName()
+    {
+        $parts = explode('\\', $this->model);
+
+        return strtolower($parts[sizeof($parts)-1]);
+    }
+
     /**
      * Yield resource listing.
      *
