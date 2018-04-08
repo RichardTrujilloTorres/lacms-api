@@ -16,6 +16,25 @@ $api->version('v1', function ($api) {
         return 'LaCMS API';
     });
 
+
+    /**
+     * Users.
+     */
+    $api->group([
+        // 'middleware' => 'api:auth', // @todo
+        'prefix' => 'users',
+        'namespace' => 'App\Http\Controllers\Api\V1',
+    ], function ($api) {
+        $api->get('/', 'UsersController@index');
+        $api->post('/', 'UsersController@store');
+        $api->get('/{id}', 'UsersController@show');
+        $api->put('/{id}', 'UsersController@update');
+        $api->delete('/{id}', 'UsersController@delete');
+    });
+
+
+
+
     /**
      * Images.
      */
