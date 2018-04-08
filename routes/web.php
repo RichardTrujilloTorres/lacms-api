@@ -26,7 +26,9 @@ $api->version('v1', function ($api) {
     ], function ($api) {
         $api->get('/', 'ImagesController@index');
         $api->post('/', 'ImagesController@store');
-        $api->get('/{id}', 'ImagesController@show');
+        // $api->get('/{id}', 'ImagesController@show');
+        $api->get('/{slug}', 'ImagesController@getBySlug');
+        $api->get('/{slug}/download', 'ImagesController@downloadBySlug');
         $api->put('/{id}', 'ImagesController@update');
         $api->delete('/{id}', 'ImagesController@delete');
     });
