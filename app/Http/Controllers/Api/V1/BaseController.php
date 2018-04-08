@@ -59,7 +59,6 @@ class BaseController extends Controller
     {
         $resource = $this->model::all();
 
-
         return $this->response->array([
             'status' => 'success',
             'message' => '',
