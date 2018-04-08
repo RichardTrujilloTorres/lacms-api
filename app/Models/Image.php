@@ -15,7 +15,7 @@ class Image extends Model
         'url', 'slug', 'post_id', 'filename',
     ];
 
-    public function posts()
+    public function post()
     {
         return $this->belongsTo(Post::class);
     }
