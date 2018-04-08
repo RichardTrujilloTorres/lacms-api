@@ -11,6 +11,7 @@ use App\Models\Image;
 use Dingo\Api\Routing\Helpers;
 
 use Validator;
+use Illuminate\Support\Facades\Storage;
 
 class ImagesController extends BaseController
 {
