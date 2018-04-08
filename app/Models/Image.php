@@ -12,7 +12,7 @@ class Image extends Model
      * @var array
      */
     protected $fillable = [
-        'url', 'slug', 'post_id',
+        'url', 'slug', 'post_id', 'filename',
     ];
 
     public function posts()
